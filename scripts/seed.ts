@@ -1,18 +1,23 @@
 import bcrypt from "bcryptjs";
 import { Pool } from "pg";
 
-if(process.env.NODE_ENV==="production")throw new Error("Seed de desenvolvimento bloqueada em produção");
+const productionSeed=process.env.ALLOW_PRODUCTION_SEED==="true";
+if(process.env.NODE_ENV==="production"&&!productionSeed)throw new Error("Seed de produção exige ALLOW_PRODUCTION_SEED=true");
 if(!process.env.DATABASE_URL)throw new Error("DATABASE_URL não configurada");
-const db=new Pool({connectionString:process.env.DATABASE_URL});
-const client=await db.connect();
-try{await client.query("BEGIN");
+if(productionSeed&&(!process.env.SEED_ADMIN_EMAIL||!process.env.SEED_ADMIN_PASSWORD))throw new Error("Seed de produção exige credenciais administrativas explícitas");
+async function main(){
+ const db=new Pool({connectionString:process.env.DATABASE_URL});
+ const client=await db.connect();
+ try{await client.query("BEGIN");
  const password=await bcrypt.hash(process.env.SEED_ADMIN_PASSWORD??"Admin2630Test!",12);
- const users=[
+ const developmentUsers=[
   ["Administrador 2630",process.env.SEED_ADMIN_EMAIL??"admin@liderflix.local","+5521999990001","ADMIN"],
   ["Usuário Gratuito","gratuito@liderflix.local","+5521999990002","USER"],
   ["Aluno Curso A","curso@liderflix.local","+5521999990003","USER"],
   ["FREITAS","freitas@liderflix.local","+5521999990004","USER"]
  ];
+ const productionAdmin=["FREITAS",process.env.SEED_ADMIN_EMAIL!,"+5521999990001","ADMIN"];
+ const users=productionSeed?[productionAdmin]:developmentUsers;
  const ids:Record<string,string>={};for(const[name,email,phone,role]of users){const row=await client.query<{id:string}>(`INSERT INTO users(name,email,phone,password_hash,role) VALUES($1,$2,$3,$4,$5) ON CONFLICT(email) DO UPDATE SET name=$1,phone=$3,role=$5 RETURNING id`,[name,email,phone,password,role]);ids[email]=row.rows[0].id}
  const courses=[
   ["lideranca-antifragil","Liderança Antifrágil","Comando, cultura e confiança sob pressão","Aprenda a liderar pessoas e equipes com presença, clareza e direção.","/liderflix/assets/banners/resiliencia.png","Freitas e Wallace","Liderança","Intermediário",true,9900],
@@ -28,10 +33,14 @@ try{await client.query("BEGIN");
  ('manual-da-lideranca','Manual da Liderança sob Pressão','Princípios objetivos para comandar em cenários críticos.','Instituto 2630','/liderflix/assets/banners/presenca.png','PUBLISHED',true,false),
  ('caderno-de-missao','Caderno de Missão 2630','Ferramenta prática para planejamento, execução e debriefing.','Instituto 2630','/liderflix/assets/banners/foco.png','PUBLISHED',false,true)
  ON CONFLICT(slug) DO UPDATE SET title=EXCLUDED.title,status='PUBLISHED'`);
- await client.query(`INSERT INTO access_grants(user_id,resource_type,resource_id,source,source_reference,status) VALUES($1,'COURSE',$2,'ADMIN','seed-course','ACTIVE') ON CONFLICT DO NOTHING`,[ids["curso@liderflix.local"],courseIds["lideranca-antifragil"]]);
- await client.query(`INSERT INTO access_grants(user_id,resource_type,resource_id,source,source_reference,status) VALUES($1,'ALL_ACCESS',NULL,'ADMIN','seed-all-access','ACTIVE') ON CONFLICT DO NOTHING`,[ids["freitas@liderflix.local"]]);
+ if(!productionSeed)await client.query(`INSERT INTO access_grants(user_id,resource_type,resource_id,source,source_reference,status) VALUES($1,'COURSE',$2,'ADMIN','seed-course','ACTIVE') ON CONFLICT DO NOTHING`,[ids["curso@liderflix.local"],courseIds["lideranca-antifragil"]]);
+ const allAccessUserId=productionSeed?ids[process.env.SEED_ADMIN_EMAIL!]:ids["freitas@liderflix.local"];
+ await client.query(`INSERT INTO access_grants(user_id,resource_type,resource_id,source,source_reference,status) VALUES($1,'ALL_ACCESS',NULL,'ADMIN','seed-all-access','ACTIVE') ON CONFLICT DO NOTHING`,[allAccessUserId]);
  const campaign=await client.query<{id:string}>(`INSERT INTO campaigns(slug,name,description,status,selectable_course_count,duration_unit,duration_value) VALUES('pe-na-porta-teste','Workshop Pé na Porta — Teste','Escolha um curso por 365 dias.','ACTIVE',1,'DAYS',365) ON CONFLICT(slug) DO UPDATE SET status='ACTIVE' RETURNING id`);
  for(const id of Object.values(courseIds).slice(0,3))await client.query("INSERT INTO campaign_eligible_courses(campaign_id,course_id) VALUES($1,$2) ON CONFLICT DO NOTHING",[campaign.rows[0].id,id]);
- await client.query(`INSERT INTO campaign_benefits(campaign_id,user_id,recipient_email,status,selectable_course_count) SELECT $1,id,email,'PENDING',1 FROM users WHERE email='gratuito@liderflix.local' AND NOT EXISTS(SELECT 1 FROM campaign_benefits WHERE campaign_id=$1 AND recipient_email='gratuito@liderflix.local')`,[campaign.rows[0].id]);
- await client.query("COMMIT");console.log("Seed de desenvolvimento aplicada.");
-}catch(error){await client.query("ROLLBACK");throw error}finally{client.release();await db.end()}
+ if(!productionSeed)await client.query(`INSERT INTO campaign_benefits(campaign_id,user_id,recipient_email,status,selectable_course_count) SELECT $1,id,email,'PENDING',1 FROM users WHERE email='gratuito@liderflix.local' AND NOT EXISTS(SELECT 1 FROM campaign_benefits WHERE campaign_id=$1 AND recipient_email='gratuito@liderflix.local')`,[campaign.rows[0].id]);
+ await client.query("COMMIT");console.log(productionSeed?"Seed inicial de produção aplicada.":"Seed de desenvolvimento aplicada.");
+ }catch(error){await client.query("ROLLBACK");throw error}finally{client.release();await db.end()}
+}
+
+main().catch((error)=>{console.error(error);process.exitCode=1});
