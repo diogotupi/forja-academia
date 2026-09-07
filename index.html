@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FORJA // Academia de Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="noise"></div>
+<section class="login-screen" id="loginScreen">
+  <div class="login-visual"></div>
+  <div class="login-card">
+    <div class="logo"><b>F</b><span>FORJA<small>ACADEMIA DE PERFORMANCE</small></span></div>
+    <p class="kicker">PROTOCOLO // ACESSO RESTRITO</p><h1>FORJE UMA MENTE<br><em>INABALÁVEL.</em></h1>
+    <p class="login-copy">Treinamento mental de alta performance para quem decidiu assumir o comando.</p>
+    <label>E-MAIL OPERACIONAL<input id="email" type="email" value="operador@forja.com"></label>
+    <label>SENHA DE ACESSO<input id="password" type="password" value="forja2026"></label>
+    <p class="login-error" id="loginError"></p><button class="button button-primary" id="enterBtn">ACESSAR A BASE <span>→</span></button>
+    <div class="system-line"><span><i></i>SISTEMA ONLINE</span><a href="#">Recuperar acesso</a></div>
+  </div>
+</section>
+<main class="app hidden" id="app">
+  <header class="topbar">
+    <a class="logo" href="#inicio"><b>F</b><span>FORJA<small>ACADEMIA DE PERFORMANCE</small></span></a>
+    <nav><a class="active" href="#inicio">Início</a><a href="#continuar">Minha jornada</a><a href="#catalogo">Catálogo</a></nav>
+    <div class="header-actions"><button aria-label="Pesquisar">⌕</button><button aria-label="Notificações">◌</button><div class="avatar">FR</div><span>FREITAS</span><button id="logoutBtn" aria-label="Sair">↗</button></div>
+  </header>
+  <section class="hero" id="inicio">
+    <div class="hero-slides"><div class="hero-image active" style="background-image:url('assets/banners/presenca.png')"></div><div class="hero-image" style="background-image:url('assets/banners/resiliencia.png')"></div><div class="hero-image" style="background-image:url('assets/banners/foco.png')"></div></div>
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <p class="kicker amber" id="heroKicker">TRILHA 03 · NEUROCIÊNCIA APLICADA</p><h2 id="heroTitle">O CÓDIGO<br><em>DA PRESENÇA</em></h2>
+      <p class="hero-description" id="heroDescription">Domine seu estado interno, amplifique sua presença e transforme intenção em ação precisa.</p>
+      <div class="hero-meta"><span>★ 4.9</span><span>7 AULAS</span><span>INTERMEDIÁRIO</span><span>2026</span></div>
+      <div class="hero-actions"><button class="button button-primary" id="watchHero">▶ CONTINUAR</button><button class="button button-glass">＋ MINHA LISTA</button><button class="round-button">i</button></div>
+    </div>
+    <div class="slide-nav"><button id="prevSlide">‹</button><div id="slideDots"><i class="active"></i><i></i><i></i></div><span id="slideCount">01 / 03</span><button id="nextSlide">›</button></div><div class="hero-progress"><i id="heroProgress"></i></div>
+  </section>
+  <div class="catalog" id="continuar">
+    <section class="content-row">
+      <div class="row-heading"><div><p class="kicker">RETOME A MISSÃO</p><h3>Continue assistindo</h3></div><a href="#catalogo">Ver todos →</a></div>
+      <div class="card-track">
+        <article class="media-card wide featured-card" data-module="presenca" style="--image:url('assets/banners/presenca.png')"><div class="card-overlay"><span class="badge">EM ANDAMENTO</span><button class="play">▶</button><div><p>MÓDULO 03</p><h4>O Código da Presença</h4><small>Aula 04 · O corpo que comunica</small></div></div><div class="card-progress"><i style="width:68%"></i></div></article>
+        <article class="media-card wide" data-module="disciplina" style="--image:url('assets/banners/foco.png')"><div class="card-overlay"><span class="badge">32% CONCLUÍDO</span><button class="play">▶</button><div><p>MÓDULO 02</p><h4>Disciplina sem Esforço</h4><small>Aula 02 · O ritual de entrada</small></div></div><div class="card-progress"><i style="width:32%"></i></div></article>
+        <article class="media-card wide" data-module="resiliencia" style="--image:url('assets/banners/resiliencia.png')"><div class="card-overlay"><span class="badge new">NOVO</span><button class="play">▶</button><div><p>MÓDULO 04</p><h4>Resiliência de Elite</h4><small>Aula 01 · A fisiologia do estresse</small></div></div><div class="card-progress"><i style="width:8%"></i></div></article>
+      </div>
+    </section>
+    <section class="content-row" id="catalogo">
+      <div class="row-heading"><div><p class="kicker">ARSENAL DE CONHECIMENTO</p><h3>Todos os módulos</h3></div><div class="filters"><button class="active">Todos</button><button>Fundamentos</button><button>Avançado</button></div></div>
+      <div class="module-grid">
+        <article class="media-card module-card" data-module="fundamentos" style="--image:url('assets/banners/foco.png');--pos:70%"><div class="module-number">01</div><div class="card-overlay"><span class="badge">8 AULAS</span><button class="play">▶</button><div><p>FUNDAMENTOS</p><h4>Fundamentos da Forja</h4><small>A base invisível da transformação</small></div></div></article>
+        <article class="media-card module-card" data-module="disciplina" style="--image:url('assets/banners/presenca.png');--pos:78%"><div class="module-number">02</div><div class="card-overlay"><span class="badge">6 AULAS</span><button class="play">▶</button><div><p>PROTOCOLOS</p><h4>Disciplina sem Esforço</h4><small>Um sistema que trabalha por você</small></div></div></article>
+        <article class="media-card module-card" data-module="presenca" style="--image:url('assets/banners/presenca.png');--pos:88%"><div class="module-number">03</div><div class="card-overlay"><span class="badge">7 AULAS</span><button class="play">▶</button><div><p>NEUROCIÊNCIA APLICADA</p><h4>O Código da Presença</h4><small>Estado interno, comunicação e influência</small></div></div></article>
+        <article class="media-card module-card" data-module="resiliencia" style="--image:url('assets/banners/resiliencia.png');--pos:82%"><div class="module-number">04</div><div class="card-overlay"><span class="badge new">9 AULAS · NOVO</span><button class="play">▶</button><div><p>ALTA PERFORMANCE</p><h4>Resiliência de Elite</h4><small>O protocolo para operar sob pressão</small></div></div></article>
+        <article class="media-card module-card" data-module="decisao" style="--image:url('assets/banners/foco.png');--pos:78%"><div class="module-number">05</div><div class="card-overlay"><span class="badge">8 AULAS</span><button class="play">▶</button><div><p>ESTRATÉGIA MENTAL</p><h4>Arquitetura da Decisão</h4><small>Clareza para o primeiro movimento</small></div></div></article>
+        <article class="media-card module-card" data-module="lideranca" style="--image:url('assets/banners/resiliencia.png');--pos:88%"><div class="module-number">06</div><div class="card-overlay"><span class="badge new">10 AULAS · ESSENCIAL</span><button class="play">▶</button><div><p>COMANDO E LIDERANÇA</p><h4>Liderança Antifrágil</h4><small>Times que resistem, aprendem e evoluem</small></div></div></article>
+      </div>
+    </section>
+    <section class="mission-banner"><div><p class="kicker amber">DESAFIO DA SEMANA</p><h3>7 DIAS DE FOCO<br><em>SEM NEGOCIAÇÃO.</em></h3><p>Complete o protocolo diário e desbloqueie a insígnia Operador Nível II.</p><button class="button button-primary">ACEITAR MISSÃO →</button></div><div class="mission-stat"><span>PROGRESSO DA TROPA</span><strong>2.847</strong><small>OPERADORES ATIVOS</small></div></section>
+  </div>
+  <footer><div class="logo muted"><b>F</b><span>FORJA</span></div><span>© 2026 · PROGRAMA DE TRANSFORMAÇÃO CONTÍNUA</span><span>SUPORTE · TERMOS · PRIVACIDADE</span></footer>
+</main>
+<div class="lesson-modal hidden" id="lessonModal"><div class="lesson-panel"><button class="close-modal" id="closeModal" aria-label="Fechar">×</button><div class="modal-visual" id="modalVisual"></div><div class="modal-body"><p class="kicker amber" id="modalKicker"></p><h3 id="modalTitle"></h3><p id="modalDescription"></p><div class="lesson-list" id="lessonList"></div></div></div></div>
+<script src="script.js"></script>
+</body></html>
