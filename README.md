@@ -88,7 +88,7 @@ Revogar um grant local não cancela cobrança Stripe. Cancelamento financeiro de
 
 ## Emails
 
-`src/lib/email.ts` fornece a abstração. Em desenvolvimento, o link de recuperação é enviado ao console. Para produção, configure `EMAIL_PROVIDER`, `EMAIL_FROM` e a chave do provedor e implemente o adaptador transacional.
+`src/lib/email.ts` fornece adaptadores transacionais para Brevo e Resend. Em desenvolvimento, o link de recuperação é enviado ao console. Para produção, use `EMAIL_PROVIDER=brevo` com `BREVO_API_KEY`, ou `EMAIL_PROVIDER=resend` com `RESEND_API_KEY`, e configure um remetente verificado em `EMAIL_FROM`.
 
 ## Variáveis de ambiente
 
