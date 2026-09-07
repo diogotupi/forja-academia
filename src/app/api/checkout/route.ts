@@ -1,0 +1,9 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getCurrentUser } from "@/lib/auth";
+import { query } from "@/lib/db";
+import { assertSameOrigin, checkRateLimit } from "@/lib/security";
+import { getStripe } from "@/lib/stripe";
+import { checkoutSchema } from "@/lib/validation";
+
+type Offer={id:string;slug:string;stripe_price_id:string;payment_mode:"payment"|"subscription";active:boolean};
+export async function POST(request:NextRequest){try{assertSameOrigin(request);checkRateLimit(`checkout:${request.headers.get("x-forwarded-for")??"local"}`,10,300_000);const user=await getCurrentUser();const{offerId}=checkoutSchema.parse(await request.json());const offer=(await query<Offer>("SELECT id,slug,stripe_price_id,payment_mode,active FROM offers WHERE slug=$1 AND active=true",[offerId])).rows[0];if(!offer)return NextResponse.json({error:"Oferta indisponível"},{status:404});const appUrl=process.env.APP_URL;if(!appUrl)throw new Error("APP_URL não configurada");const session=await getStripe().checkout.sessions.create({mode:offer.payment_mode,line_items:[{price:offer.stripe_price_id,quantity:1}],success_url:`${appUrl}/catalogo?checkout=success`,cancel_url:`${appUrl}/catalogo?checkout=cancelled`,customer_email:user?.email,client_reference_id:user?.id,metadata:{offerId:offer.id,offerSlug:offer.slug,userId:user?.id??""},subscription_data:offer.payment_mode==="subscription"?{metadata:{offerId:offer.id,userId:user?.id??""}}:undefined});await query("INSERT INTO purchases(user_id,offer_id,stripe_checkout_session_id,status,customer_email) VALUES($1,$2,$3,'PENDING',$4) ON CONFLICT(stripe_checkout_session_id) DO NOTHING",[user?.id??null,offer.id,session.id,user?.email??null]);return NextResponse.json({url:session.url})}catch(error){return NextResponse.json({error:error instanceof Error?error.message:"Falha ao iniciar checkout"},{status:400})}}

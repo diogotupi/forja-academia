@@ -1,0 +1,2 @@
+import{EbookAdmin}from"@/components/ebook-admin";import{query}from"@/lib/db";
+export default async function EbookAdminPage(){const items=(await query<{id:string;title:string;slug:string;description:string;author:string;cover_url:string|null;storage_key:string|null;status:string;is_free:boolean;included_in_all_access:boolean;price_cents:number|null;stripe_price_id:string|null}>("SELECT * FROM ebooks ORDER BY updated_at DESC")).rows;return <><div className="admin-title"><p>BIBLIOTECA</p><h1>E-BOOKS</h1></div><EbookAdmin items={items}/></>}

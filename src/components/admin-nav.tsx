@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function AdminNav(){return <aside className="admin-nav"><strong>LIDERFLIX <span>ADMIN</span></strong><nav><Link href="/admin">Visão geral</Link><Link href="/admin/usuarios">Usuários</Link><Link href="/admin/cursos">Cursos e aulas</Link><Link href="/admin/ebooks">E-books</Link><Link href="/admin/campanhas">Campanhas</Link><Link href="/catalogo">← Voltar à plataforma</Link></nav></aside>}
