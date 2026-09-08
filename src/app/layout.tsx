@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
   title: { default: "LiderFlix | Instituto 2630", template: "%s | LiderFlix" },
-  description: "Conteúdos digitais do Instituto 2630 para liderança, estratégia e alta performance.",
+  description: "O próximo passo da sua liderança começa em você. Método dos 4 Pilares 2630.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

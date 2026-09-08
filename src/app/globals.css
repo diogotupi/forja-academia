@@ -1,11 +1,11 @@
 :root {
-  --ink: #050505;
-  --surface: #111;
-  --raised: #191919;
-  --red: #d50028;
-  --red-dark: #94001c;
-  --white: #fff;
-  --muted: #a7a7a7;
+  --ink: #0c0a0a;
+  --surface: #171313;
+  --raised: #231e1e;
+  --red: #cc001e;
+  --red-dark: #5e1818;
+  --white: #f5f1f0;
+  --muted: #cec6c6;
   --border: #ffffff1f;
 }
 * {
@@ -165,7 +165,10 @@ button {
 }
 .manifesto {
   padding: 110px 7%;
-  background: linear-gradient(120deg, #080808, #111);
+  background: linear-gradient(120deg, #0c0a0a, #231e1e);
+  background-image:
+    linear-gradient(120deg, #0c0a0af2, #231e1ee8),
+    repeating-linear-gradient(135deg, transparent 0 24px, #cc001e14 25px 27px, transparent 28px 52px);
   border-top: 1px solid var(--border);
 }
 .manifesto h2 span {
@@ -199,6 +202,33 @@ button {
   font: 400 20px var(--font-display);
   letter-spacing: 1px;
 }
+.method-intro {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  margin-top: 52px;
+}
+.pillars-grid > div {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 22px;
+  border-right: 1px solid var(--border);
+  border-bottom: 2px solid var(--red);
+}
+.pillars-grid > div:last-child { border-right: 0; }
+.pillars-grid strong { font: 400 54px var(--font-display); color: var(--red); }
+.pillars-grid span { font: 400 28px var(--font-display); letter-spacing: 1px; }
+.pillars-grid small { color: var(--muted); font-size: 10px; line-height: 1.5; margin-top: 7px; }
 .catalog-preview {
   padding: 100px 5%;
 }
@@ -368,6 +398,7 @@ button {
   .manifesto-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
   .preview-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -418,6 +449,8 @@ button {
   .manifesto-grid {
     grid-template-columns: 1fr;
   }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .pillars-grid > div { border-right: 0; }
   .preview-grid {
     display: flex;
     overflow-x: auto;
