@@ -821,14 +821,18 @@ button {
   padding: 35px 4.5%;
 }
 .video-shell {
+  position: relative;
+  width: 100%;
   aspect-ratio: 16/9;
+  min-width: 0;
+  overflow: hidden;
   background: radial-gradient(circle at center, #241014, #080808 50%);
   border: 1px solid var(--border);
   display: grid;
   place-items: center;
   margin-bottom: 35px;
 }
-.video-shell iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-shell iframe { position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; border: 0; display: block; }
 .video-shell > div {
   text-align: center;
   display: flex;
@@ -928,8 +932,12 @@ button {
     display: none;
   }
   .lesson-layout > section {
-    padding: 25px 4%;
+    width: 100%;
+    min-width: 0;
+    padding: 22px 4%;
   }
+  .video-shell { aspect-ratio: 16/10; margin-bottom: 26px; border-radius: 2px; }
+  .lesson-layout section > h1 { font-size: 42px; line-height: .95; }
   .lesson-actions {
     flex-direction: column;
     gap: 10px;
