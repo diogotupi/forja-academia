@@ -6,7 +6,7 @@ const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"], variable: "--font-
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: { default: "LiderFlix | Instituto 2630", template: "%s | LiderFlix" },
+  title: { default: "Academia de Liderança | Instituto 2630", template: "%s | Academia de Liderança" },
   description: "O próximo passo da sua liderança começa em você. Método dos 4 Pilares 2630.",
 };
 

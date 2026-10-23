@@ -5,14 +5,14 @@ function escapeHtml(value: string) {
 }
 
 function emailContent(input: PasswordResetInput, resetUrl: string) {
-  return `<div style="font-family:Arial,sans-serif;color:#171717"><h1>LiderFlix</h1><p>Olá, ${escapeHtml(input.name)}.</p><p>Recebemos uma solicitação para redefinir sua senha.</p><p><a href="${escapeHtml(resetUrl)}" style="display:inline-block;background:#b71920;color:#fff;padding:12px 20px;text-decoration:none">REDEFINIR SENHA</a></p><p>Este link expira em 30 minutos. Se você não fez a solicitação, ignore este e-mail.</p></div>`;
+  return `<div style="font-family:Arial,sans-serif;color:#171717"><h1>Academia de Liderança</h1><p>Olá, ${escapeHtml(input.name)}.</p><p>Recebemos uma solicitação para redefinir sua senha.</p><p><a href="${escapeHtml(resetUrl)}" style="display:inline-block;background:#b71920;color:#fff;padding:12px 20px;text-decoration:none">REDEFINIR SENHA</a></p><p>Este link expira em 30 minutos. Se você não fez a solicitação, ignore este e-mail.</p></div>`;
 }
 
 function senderFromEnvironment() {
   const value = process.env.EMAIL_FROM;
   if (!value) throw new Error("EMAIL_FROM não configurado");
   const match = value.match(/^\s*(.*?)\s*<([^>]+)>\s*$/);
-  return match ? { name: match[1], email: match[2] } : { name: "LiderFlix", email: value };
+  return match ? { name: match[1], email: match[2] } : { name: "Academia de Liderança", email: value };
 }
 
 export async function sendPasswordResetEmail(input: PasswordResetInput) {
@@ -32,7 +32,7 @@ export async function sendPasswordResetEmail(input: PasswordResetInput) {
       body: JSON.stringify({
         from,
         to: [input.email],
-        subject: "Redefinição de senha — LiderFlix",
+        subject: "Redefinição de senha — Academia de Liderança",
         html: emailContent(input, resetUrl),
       }),
     });
@@ -48,7 +48,7 @@ export async function sendPasswordResetEmail(input: PasswordResetInput) {
       body: JSON.stringify({
         sender: senderFromEnvironment(),
         to: [{ email: input.email, name: input.name }],
-        subject: "Redefinição de senha — LiderFlix",
+        subject: "Redefinição de senha — Academia de Liderança",
         htmlContent: emailContent(input, resetUrl),
       }),
     });

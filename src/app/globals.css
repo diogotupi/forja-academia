@@ -45,7 +45,8 @@ button {
   flex-direction: column;
 }
 .brand-logo strong {
-  font: 400 28px/1 var(--font-display);
+  font: 400 22px/1.05 var(--font-display);
+  max-width: 185px;
   letter-spacing: 1px;
 }
 .brand-logo strong span,
@@ -134,7 +135,7 @@ button {
   max-width: 700px;
 }
 .hero-copy h1 {
-  font: 400 clamp(90px, 12vw, 170px)/0.68 var(--font-display);
+  font: 400 clamp(56px, 7vw, 96px)/0.95 var(--font-display);
   letter-spacing: -2px;
   margin: 8px 0 35px;
 }
@@ -449,7 +450,7 @@ button {
     background-position: 65% center;
   }
   .hero-copy h1 {
-    font-size: 90px;
+    font-size: clamp(48px, 12vw, 72px);
   }
   .hero-copy h2 {
     font-size: 42px;
