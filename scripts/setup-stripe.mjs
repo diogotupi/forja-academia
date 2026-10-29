@@ -39,7 +39,8 @@ try {
   }
   const configurations=await stripe.billingPortal.configurations.list({limit:100});
   if(!configurations.data.some(c=>c.active&&c.metadata?.integration==='academia_2630')) {
-    await stripe.billingPortal.configurations.create({business_profile:{headline:'Academia de Liderança'},metadata:{integration:'academia_2630'},features:{subscription_cancel:{enabled:true,mode:'at_period_end'},payment_method_update:{enabled:true},invoice_history:{enabled:true}});
+    await stripe.billingPortal.configurations.create({business_profile:{headline:'Academia de Liderança'},metadata:{integration:'academia_2630'},features:{subscription_cancel:{enabled:true,mode:'at_period_end'},payment_method_update:{enabled:true},invoice_history:{enabled:true}}});
   }
   console.log('Webhook:',endpoint.id,url);
 } finally { await pool.end(); }
+
