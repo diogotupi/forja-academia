@@ -15,6 +15,6 @@ export async function canAccess(userId: string, resource: ProtectedResource, dat
         (g.resource_type=$2 AND g.resource_id=$3)
         OR (g.resource_type='ALL_ACCESS' AND $4::boolean=true)
       )
-    ) AS allowed`, [userId, resource.type, resource.id, resource.includedInAllAccess ?? false]);
+    ) AS allowed`, [userId, resource.type, resource.id, resource.type === "COURSE" || (resource.includedInAllAccess ?? false)]);
   return result.rows[0]?.allowed ?? false;
 }

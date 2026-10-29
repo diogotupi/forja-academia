@@ -1543,3 +1543,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid white; outline-offset
   .catalog-hero-navigation { margin-top: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .catalog-hero-image { animation: none; } }
+
+.academy-plan { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; padding:28px; border:1px solid var(--border); background:var(--surface); }
+.academy-plan h2 {font:400 38px var(--font-display);margin:0;}
+.academy-plan p {max-width:600px;color:var(--muted);}
+.academy-plan strong {font-size:28px;}
+.academy-plan small {font-size:16px;font-weight:400;}
+.account-link {font-size:14px;}
+@media(max-width:600px){.app-header .brand-logo strong {max-width:110px;font-size:18px;}.account-link{font-size:12px;}.user-chip{gap:4px;}.academy-plan{padding:20px;}}
