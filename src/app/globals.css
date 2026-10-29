@@ -1490,3 +1490,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid white; outline-offset
   .grant-list article, .manage-link { flex-wrap: wrap; gap: 12px; }
   .profile-data strong, .user-profile strong { overflow-wrap: anywhere; }
 }
+
+.arrow-icon { flex-shrink: 0; vertical-align: middle; }
+.button, .logout { gap: 8px; }
+.logout, .lesson-play { display: inline-flex; align-items: center; justify-content: center; }
+.lesson-play { min-height: 44px; }
