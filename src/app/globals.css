@@ -1445,6 +1445,7 @@ input, select, textarea { min-width: 0; }
 .auth-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
 .video-player { margin-bottom: 30px; }
 .video-player .video-shell { margin-bottom: 12px; background: #000; }
+.video-player .drive-video-shell { aspect-ratio: 16/9; min-height: 0; }
 .player-tools { display: flex; flex-wrap: wrap; gap: 10px; }
 .player-tools .button { color: var(--white); }
 .video-player.is-expanded { position: fixed; inset: 0; z-index: 100; background: #000; padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom)); margin: 0; display: flex; flex-direction: column; }
