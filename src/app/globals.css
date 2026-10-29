@@ -54,7 +54,7 @@ button {
   color: var(--red);
 }
 .brand-logo small {
-  font-size: 7px;
+  font-size: 14px;
   letter-spacing: 1.3px;
   color: #aaa;
   margin-top: 3px;
@@ -66,7 +66,7 @@ button {
   min-height: 46px;
   padding: 0 22px;
   border: 1px solid transparent;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.7px;
   text-transform: uppercase;
@@ -86,7 +86,7 @@ button {
   background: #09090988;
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2.4px;
   margin: 0 0 14px;
@@ -108,7 +108,7 @@ button {
 .site-header nav {
   display: flex;
   gap: 30px;
-  font-size: 11px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 .site-header nav a {
@@ -119,7 +119,7 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 11px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 .marketing-hero {
@@ -151,7 +151,7 @@ button {
 .hero-copy > p:not(.eyebrow) {
   max-width: 580px;
   color: #c4c4c4;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
 }
 .actions {
@@ -160,7 +160,7 @@ button {
   margin: 30px 0 18px;
 }
 .hero-copy > small {
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 1.2px;
   color: #858585;
 }
@@ -185,7 +185,7 @@ button {
 }
 .manifesto-grid > p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.8;
   max-width: 520px;
 }
@@ -206,7 +206,7 @@ button {
 .method-intro {
   max-width: 720px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8;
   margin: 0;
 }
@@ -229,7 +229,7 @@ button {
 .pillars-grid > div:last-child { border-right: 0; }
 .pillars-grid strong { font: 400 54px var(--font-display); color: var(--red); }
 .pillars-grid span { font: 400 28px var(--font-display); letter-spacing: 1px; }
-.pillars-grid small { color: var(--muted); font-size: 10px; line-height: 1.5; margin-top: 7px; }
+.pillars-grid small { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 7px; }
 .catalog-preview {
   padding: 100px 5%;
 }
@@ -239,7 +239,7 @@ button {
   justify-content: space-between;
   gap: 20px;
 }
-.carousel-hint { color: var(--muted); font-size: 8px; letter-spacing: 1.4px; padding-bottom: 5px; }
+.carousel-hint { color: var(--muted); font-size: 14px; letter-spacing: 1.4px; padding-bottom: 5px; }
 .carousel-shell { position: relative; }
 .preview-grid {
   display: flex;
@@ -274,7 +274,7 @@ button {
   border-color: var(--red);
 }
 .preview-grid p {
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 1.8px;
   color: var(--red);
   font-weight: 700;
@@ -285,7 +285,7 @@ button {
   margin: 5px 0;
 }
 .preview-grid span {
-  font-size: 10px;
+  font-size: 14px;
   color: #aaa;
 }
 .site-footer {
@@ -295,8 +295,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #777;
-  font-size: 8px;
+  color: #b6adad;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 .auth-page {
@@ -319,7 +319,7 @@ button {
   margin: 0 0 12px;
 }
 .auth-page section > div > p:not(.eyebrow, .form-error) {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.6;
 }
@@ -346,7 +346,7 @@ button {
   font-weight: 400;
 }
 .auth-page aside > span {
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 2px;
 }
 .auth-form {
@@ -356,7 +356,7 @@ button {
   margin-top: 28px;
 }
 .auth-form label {
-  font-size: 8px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.3px;
 }
@@ -381,8 +381,8 @@ button {
   grid-column: 1/-1;
 }
 .auth-form > small {
-  color: #777;
-  font-size: 8px;
+  color: #b6adad;
+  font-size: 14px;
 }
 .auth-form .button {
   margin-top: 4px;
@@ -392,13 +392,13 @@ button {
 }
 .form-error {
   color: #ff718b;
-  font-size: 10px;
+  font-size: 14px;
   margin: 0;
 }
 .form-links {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 14px;
   color: #aaa;
 }
 .form-links a {
@@ -437,8 +437,7 @@ button {
     height: 74px;
     padding: 0 4%;
   }
-  .site-header .brand-logo small,
-  .header-cta > a:first-child {
+  .site-header .brand-logo small {
     display: none;
   }
   .brand-logo strong {
@@ -524,7 +523,7 @@ button {
 .app-header nav {
   display: flex;
   gap: 27px;
-  font-size: 10px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .user-chip {
@@ -532,7 +531,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 10px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .user-chip b {
@@ -541,13 +540,13 @@ button {
   width: 32px;
   height: 32px;
   background: var(--red);
-  font-size: 9px;
+  font-size: 14px;
 }
 .logout {
   border: 0;
   background: none;
-  color: #888;
-  font-size: 9px;
+  color: #b6adad;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .platform-hero {
@@ -567,7 +566,7 @@ button {
 }
 .platform-hero > div > p:not(.eyebrow) {
   color: #c1c1c1;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.7;
 }
 .platform-hero > div > div {
@@ -575,7 +574,7 @@ button {
   gap: 16px;
   margin: 23px 0;
   color: #aaa;
-  font-size: 9px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 .platform-content {
@@ -597,9 +596,9 @@ button {
   margin: 0;
 }
 .section-title > span {
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 1.4px;
-  color: #777;
+  color: #b6adad;
 }
 .course-row {
   display: grid;
@@ -631,7 +630,7 @@ button {
 .course-card p {
   margin: 0;
   color: var(--red);
-  font-size: 8px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.2px;
 }
@@ -640,7 +639,7 @@ button {
   margin: 4px 0;
 }
 .course-card span {
-  font-size: 8px;
+  font-size: 14px;
   color: #aaa;
 }
 .course-state {
@@ -650,7 +649,7 @@ button {
   background: #090909dd;
   border: 1px solid #ffffff33;
   padding: 6px 8px;
-  font-size: 7px !important;
+  font-size: 14px !important;
   color: #fff !important;
   letter-spacing: 0.7px;
 }
@@ -675,8 +674,8 @@ button {
   margin: 0;
 }
 .empty-state p {
-  font-size: 11px;
-  color: #888;
+  font-size: 16px;
+  color: #b6adad;
   margin: 7px 0 22px;
 }
 @media (max-width: 900px) {
@@ -743,7 +742,7 @@ button {
   margin: 10px 0 20px;
 }
 .course-hero > div > p:not(.eyebrow) {
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.75;
   color: #bbb;
 }
@@ -751,7 +750,7 @@ button {
   display: flex;
   gap: 18px;
   margin: 23px 0;
-  font-size: 8px;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 .purchase-box {
@@ -766,8 +765,8 @@ button {
 }
 .purchase-box > span {
   width: 100%;
-  font-size: 8px;
-  color: #888;
+  font-size: 14px;
+  color: #b6adad;
 }
 .lesson-catalog {
   padding: 80px 7%;
@@ -795,17 +794,17 @@ button {
   color: var(--red);
 }
 .lesson-catalog article h3 {
-  font-size: 13px;
+  font-size: 16px;
   margin: 0;
 }
 .lesson-catalog article p {
-  font-size: 9px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
   margin: 5px 0 0;
 }
 .lesson-catalog article small {
-  font-size: 8px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
 }
 .lesson-catalog article > a {
   color: var(--red);
@@ -842,23 +841,23 @@ button {
 }
 .video-shell span {
   color: var(--red);
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 2px;
 }
 .video-shell strong {
   font: 400 25px var(--font-display);
 }
 .video-shell small {
-  font-size: 8px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
 }
 .lesson-layout section > h1 {
   font: 400 50px var(--font-display);
   margin: 0;
 }
 .lesson-layout section > p:not(.eyebrow) {
-  font-size: 11px;
-  color: #888;
+  font-size: 16px;
+  color: #b6adad;
   line-height: 1.7;
 }
 .lesson-actions {
@@ -888,7 +887,7 @@ button {
   gap: 8px;
   padding: 14px 24px;
   border-top: 1px solid #ffffff10;
-  font-size: 9px;
+  font-size: 14px;
   color: #aaa;
 }
 .lesson-layout aside > a.active {
@@ -976,7 +975,7 @@ button {
   padding: 14px 0;
   border-bottom: 1px solid #ffffff0d;
   color: #aaa;
-  font-size: 11px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 .admin-nav nav a:hover {
@@ -987,7 +986,7 @@ button {
   min-width: 0;
 }
 .admin-title p {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--red);
   letter-spacing: 1.8px;
 }
@@ -1010,7 +1009,7 @@ button {
   justify-content: space-between;
 }
 .metric-grid span {
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 1px;
   color: #999;
 }
@@ -1042,12 +1041,12 @@ button {
   gap: 15px;
   padding: 15px 10px;
   border-bottom: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 16px;
   align-items: center;
 }
 .admin-table .table-head {
-  font-size: 9px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
   letter-spacing: 1px;
 }
 .admin-table > a:hover {
@@ -1059,7 +1058,7 @@ button {
 }
 .admin-table small {
   color: var(--red);
-  font-size: 9px;
+  font-size: 14px;
   margin-top: 4px;
 }
 .user-profile {
@@ -1077,12 +1076,12 @@ button {
   display: block;
 }
 .user-profile span {
-  font-size: 9px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
   margin-bottom: 7px;
 }
 .user-profile strong {
-  font-size: 12px;
+  font-size: 16px;
 }
 .admin-section {
   margin-top: 45px;
@@ -1098,7 +1097,7 @@ button {
 }
 .grant-form p {
   width: 100%;
-  font-size: 9px;
+  font-size: 14px;
   color: #aaa;
 }
 .grant-list {
@@ -1118,22 +1117,22 @@ button {
 }
 .grant-list span {
   color: var(--red);
-  font-size: 7px;
+  font-size: 14px;
 }
 .grant-list strong {
-  font-size: 11px;
+  font-size: 16px;
   margin: 4px 0;
 }
 .grant-list small {
-  color: #777;
-  font-size: 8px;
+  color: #b6adad;
+  font-size: 14px;
 }
 .revoke {
   border: 1px solid #71202f;
   background: none;
   color: #ff526e;
   padding: 8px;
-  font-size: 7px;
+  font-size: 14px;
 }
 @media (max-width: 900px) {
   .admin-shell {
@@ -1209,12 +1208,12 @@ button {
   display: block;
 }
 .profile-data span {
-  font-size: 7px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
   margin-bottom: 8px;
 }
 .profile-data strong {
-  font-size: 11px;
+  font-size: 16px;
 }
 .benefit-section {
   margin-top: 60px;
@@ -1229,7 +1228,7 @@ button {
   margin: 0;
 }
 .benefit-section article > p {
-  font-size: 10px;
+  font-size: 14px;
   color: #aaa;
 }
 .benefit-redeemer {
@@ -1248,7 +1247,7 @@ button {
 }
 .benefit-redeemer > p {
   width: 100%;
-  font-size: 10px;
+  font-size: 14px;
 }
 .ebook-grid {
   display: grid;
@@ -1269,7 +1268,7 @@ button {
   align-self: flex-start;
   background: var(--red);
   padding: 6px 8px;
-  font-size: 7px;
+  font-size: 14px;
   font-weight: 700;
 }
 .ebook-grid h2 {
@@ -1277,12 +1276,12 @@ button {
   margin: 0;
 }
 .ebook-grid p {
-  font-size: 9px;
+  font-size: 14px;
   color: #aaa;
 }
 .ebook-grid small {
   display: block;
-  font-size: 8px;
+  font-size: 14px;
   margin: 10px 0 18px;
 }
 @media (max-width: 700px) {
@@ -1326,15 +1325,15 @@ button {
 }
 .admin-items span {
   color: var(--red);
-  font-size: 9px;
+  font-size: 14px;
 }
 .admin-items strong {
-  font-size: 14px;
+  font-size: 16px;
   margin: 4px 0;
 }
 .admin-items small {
-  font-size: 10px;
-  color: #777;
+  font-size: 14px;
+  color: #b6adad;
 }
 .content-admin > form {
   background: #111;
@@ -1356,7 +1355,7 @@ button {
   margin: 0;
 }
 .content-admin form label {
-  font-size: 10px;
+  font-size: 14px;
   color: #999;
   text-transform: uppercase;
 }
@@ -1370,7 +1369,7 @@ button {
   background: #090909;
   border: 1px solid #333;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
 }
 .content-admin textarea {
   min-height: 90px;
@@ -1391,7 +1390,7 @@ button {
   padding: 14px;
 }
 .content-admin legend {
-  font-size: 10px;
+  font-size: 14px;
   color: #999;
 }
 .content-admin fieldset .check {
@@ -1402,14 +1401,14 @@ button {
   justify-content: space-between;
   padding: 14px;
   border-top: 1px solid var(--border);
-  font-size: 12px;
+  font-size: 16px;
 }
 .manage-link:hover {
   background: #ffffff06;
 }
 .manage-link span {
   color: var(--red);
-  font-size: 10px;
+  font-size: 14px;
 }
 @media (max-width: 800px) {
   .content-admin {
@@ -1421,4 +1420,72 @@ button {
   .content-admin form > * {
     grid-column: 1/-1;
   }
+}
+
+/* Readable type and layouts at narrow widths. */
+body { font-size: 16px; line-height: 1.5; }
+button, input, select, textarea { font: inherit; }
+input, select, textarea { min-width: 0; }
+.auth-form input, .content-admin input, .content-admin select, .content-admin textarea { font-size: 16px; }
+.brand-logo { flex-shrink: 0; }
+.button { text-align: center; line-height: 1.4; padding: 12px 20px; }
+.site-header { gap: 28px; }
+.site-header nav { gap: 18px; }
+.header-login { min-width: 90px; }
+.course-facts, .platform-hero > div > div { flex-wrap: wrap; }
+.course-card { min-height: 240px; padding-top: 58px; }
+.section-title { gap: 16px; flex-wrap: wrap; }
+.lesson-layout > section, .lesson-layout > aside { min-width: 0; }
+.lesson-layout > aside > a { display: flex; gap: 14px; padding: 16px; font-size: 16px; overflow-wrap: anywhere; }
+.lesson-layout > aside > a.active { background: #cc001e20; border-left: 3px solid var(--red); }
+.lesson-layout > aside h2 { font: 400 32px/1.1 var(--font-display); }
+.lesson-layout section > h1 { line-height: 1.1; }
+.lesson-actions { flex-wrap: wrap; gap: 12px; }
+.lesson-actions > div { flex-wrap: wrap; }
+.auth-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; }
+.video-player { margin-bottom: 30px; }
+.video-player .video-shell { margin-bottom: 12px; background: #000; }
+.player-tools { display: flex; flex-wrap: wrap; gap: 10px; }
+.player-tools .button { color: var(--white); }
+.video-player.is-expanded { position: fixed; inset: 0; z-index: 100; background: #000; padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom)); margin: 0; display: flex; flex-direction: column; }
+.video-player.is-expanded .video-shell { flex: 1; aspect-ratio: auto; min-height: 0; }
+.video-player.is-expanded .player-tools { flex-shrink: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+@media (max-width: 1100px) { .site-header nav { display: none; } .app-header { gap: 24px; } }
+@media (max-width: 600px) {
+  .site-header, .app-header { padding: 0 16px; gap: 12px; }
+  .site-header .brand-logo, .app-header .brand-logo { gap: 8px; }
+  .site-header .brand-logo strong, .app-header .brand-logo strong { font-size: 20px; max-width: 135px; }
+  .header-cta { gap: 0; }
+  .header-signup { display: none; }
+  .header-cta .button { padding: 10px 14px; font-size: 14px; }
+  .user-chip { gap: 6px; }
+  .user-chip b { display: none; }
+  .logout { min-height: 44px; padding: 8px; color: var(--muted); }
+  .marketing-hero { height: auto; min-height: 760px; }
+  .auth-page > section { padding: 24px 20px 40px; gap: 24px; }
+  .auth-topbar { margin-bottom: 8px; flex-wrap: wrap; }
+  .auth-topbar .brand-logo small { display: none; }
+  .auth-page h1 { font-size: clamp(40px, 11vw, 54px); line-height: 1.05; }
+  .auth-form { gap: 20px; }
+  .form-links { flex-wrap: wrap; gap: 16px; }
+  .form-links a { padding: 8px 0; }
+  .eyebrow { letter-spacing: 1.2px; line-height: 1.6; }
+  .video-shell { aspect-ratio: 4/3; min-height: 300px; }
+  .video-player.is-expanded .video-shell { min-height: 0; }
+  .player-tools .button { flex: 1; padding: 12px; }
+  .lesson-layout > aside { padding: 24px 20px; border-left: 0; border-top: 1px solid var(--border); }
+  .lesson-actions > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-actions .button { padding: 12px; }
+  .course-card { min-height: 260px; }
+  .preview-grid article { aspect-ratio: 4/3; }
+  .course-hero h1 { overflow-wrap: anywhere; line-height: 1; }
+  .lesson-catalog article { gap: 10px; grid-template-columns: 28px minmax(0, 1fr) 28px; }
+  .admin-search { flex-wrap: wrap; }
+  .admin-nav { padding: 24px 20px; }
+  .admin-nav nav { gap: 10px; }
+  .metric-grid article { padding: 14px; }
+  .content-admin > form { padding: 16px; }
+  .grant-list article, .manage-link { flex-wrap: wrap; gap: 12px; }
+  .profile-data strong, .user-profile strong { overflow-wrap: anywhere; }
 }
